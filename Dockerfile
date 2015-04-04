@@ -4,10 +4,9 @@ RUN mkdir -p /app &&\
     sed -i.bak -e 's+daemon:x:2:2:daemon:+daemon:x:2:2:daemon:/app:/bin/bash+' /etc/passwd
 WORKDIR /app
 ENV HOME /app
-RUN apk-install nodejs git python
+RUN apk-install nodejs git python make
 USER daemon
 RUN git clone https://github.com/bitpay/insight.git /app
-RUN apk-install make
 RUN npm install
 ENV INSIGHT_DB /data
 VOLUME /data
