@@ -7,6 +7,7 @@ ENV HOME /app
 RUN apk-install nodejs git python
 USER daemon
 RUN git clone https://github.com/bitpay/insight.git /app
+RUN apk-install make
 RUN npm install
 ENV INSIGHT_DB /data
 VOLUME /data
