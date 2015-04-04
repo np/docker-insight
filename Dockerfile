@@ -8,5 +8,3 @@ RUN apk-install nodejs git python make gcc g++ openssl-dev
 USER daemon
 RUN git clone https://github.com/bitpay/insight.git /app
 RUN npm install
-EXPOSE 3000
-CMD ["node", "insight.js"]
